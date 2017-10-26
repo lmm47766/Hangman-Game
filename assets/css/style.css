@@ -1,0 +1,27 @@
+body{
+	background: black;
+	color: white;
+	text-align: center;
+}
+
+h1{
+	font-size: 40px;
+}
+
+p{
+	font-size: 18px;
+}
+
+
+#numGuess{
+	color: red;
+}
+
+#currGuess {
+	color: yellow;
+}
+
+#underscores{
+	font-size: 35px;
+}
+
