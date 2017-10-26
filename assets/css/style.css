@@ -1,27 +1,59 @@
 body{
-	background: black;
+	/*background: black;*/
 	color: white;
 	text-align: center;
+	background-size: 100%;
+	margin: auto auto;
 }
 
 h1{
+	color: darkred;
 	font-size: 40px;
+	width: 100%;
 }
 
 p{
-	font-size: 18px;
+	font-size: 20px;
+	font-family: 'Saira', sans-serif;
 }
 
 
 #numGuess{
-	color: red;
+	color: darkred;
+	font-weight: 10px;
 }
 
 #currGuess {
-	color: yellow;
+	color: darkred;
+	font-weight: 10px;
 }
 
 #underscores{
+	color: darkred;
 	font-size: 35px;
+	font-weight: 30px;
+}
+
+/*#currentGuesses {
+	color: black;
+}*/
+
+.gameBox {
+/*	background-color: black;
+	opacity: .5;*/
+/*	width: 300px;
+	margin-left: auto;
+	margin-right: auto;*/
+	margin: auto;
+	width: 45%;
+	border-style: dotted;
+	border-color: darkred;
+	border-width: 5px;
+	border-radius: 10px;	
+}
+
+.image {
+	width: 45%;
+	margin: auto;
 }
 

@@ -1,11 +1,14 @@
 
 // Variables
-var words = ["watermelon","melon","banana","peach","apple"];
+var words = ["ryu","ken","megaman","wolverine","hulk","deadpool","doom","ironman","spiderman"
+			,"cyclopes","magneto","vega","blanka","guile"];
 var guessesLeft = 15;
 var currentGuesses=[];
 var randomWord = words[Math.floor(Math.random() * words.length)];
 var test = randomWord.split(""); //array of random word
 var newWord = new Array(randomWord.length).fill("_");
+var wins = 0;
+var losses = 0;
 
 
 console.log(randomWord);
@@ -27,16 +30,30 @@ document.onkeyup = function (event) {
 			document.getElementById("underscores").innerHTML= newWord.join(" ");
 
 			if (checkAnswers()) {
+				wins++;
 				document.getElementById('audio').play();
 				alert("YOU GUESSED THE WORD " + newWord.join("") );
+				guessesLeft = 15;
+				currentGuesses=[];
+				randomWord = words[Math.floor(Math.random() * words.length)];
+				test = randomWord.split("");
+				newWord = new Array(randomWord.length).fill("_");
+				document.getElementById("wins").innerHTML= wins;				
+				document.getElementById("underscores").innerHTML= newWord.join(" ");
+				document.getElementById("guessesLeft").innerHTML = guessesLeft;
+				document.getElementById("currentGuesses").innerHTML= currentGuesses.join(" ");
+
 	
 			}
+
 
 		}
 
 
 		else {
 			guessesLeft--;
+			// losses++;
+			document.getElementById("wins").innerHTML= wins;
 			document.getElementById("guessesLeft").innerHTML = guessesLeft;
 			document.getElementById("currentGuesses").innerHTML= currentGuesses.join(" ");
 		}
@@ -50,6 +67,21 @@ document.onkeyup = function (event) {
 	}	
 	else {
 		alert("ran out of moves");
+		losses++;
+
+
+
+		underscores();
+		guessesLeft = 15;
+		currentGuesses=[];
+		randomWord = words[Math.floor(Math.random() * words.length)];
+		test = randomWord.split("");
+		newWord = new Array(randomWord.length).fill("_");
+		document.getElementById("losses").innerHTML= losses;				
+		document.getElementById("underscores").innerHTML= newWord.join(" ");
+		document.getElementById("guessesLeft").innerHTML = guessesLeft;
+		document.getElementById("currentGuesses").innerHTML= currentGuesses.join(" ");
+
 	}
 
 

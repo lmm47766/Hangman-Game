@@ -3,18 +3,57 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Luis HW3</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
 	</head>
-	<body>
-		<h1>Hangman Game</h1>
+	<body background="assets/images/mvc.jpg">
 		
-		<p id="underscores"> Press any key to start <span id="word"></span></p>
-		<p id="numGuess">Number of Guesses Remaining:  <span id="guessesLeft"></span></p>
-		<p id="currGuess">Letters already Guessed:  <span id="currentGuesses"></span></p>
+			<div class="container-fluid">
+				<!-- Image row -->
+				<div class="row">
+					<div class="col-xl-12 image">
 
-		<audio id="audio" src="winningAudio.mp3" preload="auto"></audio>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Marvel_vs_Capcom_logo.png/250px-Marvel_vs_Capcom_logo.png">
+
+					</div>	
+				</div>
+				
+				<!-- Gamebox row -->
+			 	<div class="row">
+				  <div class="col-xl-12 gameBox">
+				  	
+					<h1>Hangman Game</h1>
+
+					<p id="underscores"> Press any key to start <span id="word"></span></p>
+					<p id="numGuess">Wins:  <span id="wins"></span></p>
+					<p id="numGuess">Losses:  <span id="losses"></span></p>
+					<p id="numGuess">Number of Guesses Remaining:  <span id="guessesLeft"></span></p>
+					<p id="currGuess">Letters already Guessed:  <span id="currentGuesses"></span></p>
+
+					<audio id="audio" src="winningAudio.mp3" preload="auto"></audio>
+
+
+				  </div>
+				</div>
+			</div>
+
+
+		
+<!-- 		<div class="gameBox">
+			<
+			<h1>Hangman Game</h1>
+
+			<p id="underscores"> Press any key to start <span id="word"></span></p>
+			<p id="numGuess">Number of Guesses Remaining:  <span id="guessesLeft"></span></p>
+			<p id="currGuess">Letters already Guessed:  <span id="currentGuesses"></span></p>
+
+			<audio id="audio" src="winningAudio.mp3" preload="auto"></audio>
+
+		</div> -->
 
 
 
