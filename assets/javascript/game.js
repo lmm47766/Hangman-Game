@@ -1,7 +1,7 @@
 
 // Variables
 var words = ["ryu","ken","megaman","wolverine","hulk","deadpool","doom","ironman","spiderman"
-			,"cyclopes","magneto","vega","blanka","guile"];
+			,"cyclopes","magneto","vega","blanka","guile","thor"];
 var guessesLeft = 10;
 var currentGuesses=[];
 var randomWord = words[Math.floor(Math.random() * words.length)];
@@ -13,7 +13,71 @@ var losses = 0;
 
 console.log(randomWord);
 
+////List of functions ///////
 
+//function to check if two arrays are the same
+function checkAnswers(){
+	for (var i = 0; i < randomWord.length; i++) {
+		if (test[i] != newWord[i] ) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
+//Funtion to check if letter is correct
+function checkLetter(guess){
+
+	if ( test.indexOf(guess) > -1 ) {
+
+		for (var i = 0; i < newWord.length; i++) {
+			if ( randomWord.charAt(i) === guess ) {
+				newWord[i]=guess;
+
+			}
+		}
+		return true;
+	}
+	else{
+		currentGuesses.push(guess);
+		return false;
+	}
+	
+}
+
+
+
+//function to put initial underscore
+function underscores(){
+	document.getElementById("underscores").innerHTML= newWord.join(" ");
+}
+
+
+//validating the input is a valid value
+function validate(input) {
+	var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+    'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+    if( letters.indexOf(input) === -1 ) {
+    	return false;
+    }
+    return true;
+
+}
+
+//function to make sure you input is new and not duplicated
+function newLetter(letter) {
+	if (newWord.indexOf(letter) > -1 || currentGuesses.indexOf(letter) > -1  ) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
+////
 
 underscores();
 
@@ -91,67 +155,6 @@ document.onkeyup = function (event) {
 
 
 
-//function to check if two arrays are the same
-function checkAnswers(){
-	for (var i = 0; i < randomWord.length; i++) {
-		if (test[i] != newWord[i] ) {
-			return false;
-		}
-	}
-	return true;
-}
-
-
-//Funtion to check if letter is correct
-function checkLetter(guess){
-
-	if ( test.indexOf(guess) > -1 ) {
-
-		for (var i = 0; i < newWord.length; i++) {
-			if ( randomWord.charAt(i) === guess ) {
-				newWord[i]=guess;
-
-			}
-		}
-		return true;
-	}
-	else{
-		currentGuesses.push(guess);
-		return false;
-	}
-	
-}
-
-
-
-//function to put initial underscore
-function underscores(){
-	document.getElementById("underscores").innerHTML= newWord.join(" ");
-}
-
-
-//validating the input is a valid value
-function validate(input) {
-	var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-    'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-    't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-    if( letters.indexOf(input) === -1 ) {
-    	return false;
-    }
-    return true;
-
-}
-
-//function to make sure you input is new and not duplicated
-function newLetter(letter) {
-	if (newWord.indexOf(letter) > -1 || currentGuesses.indexOf(letter) > -1  ) {
-		return false;
-	}
-	else {
-		return true;
-	}
-}
 
 
 
