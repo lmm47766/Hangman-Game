@@ -2,7 +2,7 @@
 // Variables
 var words = ["ryu","ken","megaman","wolverine","hulk","deadpool","doom","ironman","spiderman"
 			,"cyclopes","magneto","vega","blanka","guile"];
-var guessesLeft = 15;
+var guessesLeft = 10;
 var currentGuesses=[];
 var randomWord = words[Math.floor(Math.random() * words.length)];
 var test = randomWord.split(""); //array of random word
@@ -33,7 +33,7 @@ document.onkeyup = function (event) {
 				wins++;
 				document.getElementById('audio').play();
 				alert("YOU GUESSED THE WORD " + newWord.join("") );
-				guessesLeft = 15;
+				guessesLeft = 10;
 				currentGuesses=[];
 				randomWord = words[Math.floor(Math.random() * words.length)];
 				test = randomWord.split("");
@@ -72,7 +72,7 @@ document.onkeyup = function (event) {
 
 
 		underscores();
-		guessesLeft = 15;
+		guessesLeft = 10;
 		currentGuesses=[];
 		randomWord = words[Math.floor(Math.random() * words.length)];
 		test = randomWord.split("");
