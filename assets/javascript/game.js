@@ -13,7 +13,7 @@ var losses = 0;
 
 console.log(randomWord);
 
-////List of functions ///////
+//******************** Beginning of functions  *****************************///
 
 //function to check if two arrays are the same
 function checkAnswers(){
@@ -77,7 +77,7 @@ function newLetter(letter) {
 	}
 }
 
-////
+//******************** End of functions  *****************************///
 
 underscores();
 
@@ -96,7 +96,7 @@ document.onkeyup = function (event) {
 			if (checkAnswers()) {
 				wins++;
 				document.getElementById('audio').play();
-				alert("YOU GUESSED THE WORD " + newWord.join("") );
+				alert("YOU GUESSED THE WORD " + newWord.join("").toUpperCase() );
 				guessesLeft = 10;
 				currentGuesses=[];
 				randomWord = words[Math.floor(Math.random() * words.length)];
